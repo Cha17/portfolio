@@ -66,12 +66,14 @@ export default function ProjectContent({ project }: ProjectContentProps) {
         {project.images && project.images.length > 0 ? (
           <ImageSlideshow images={project.images} title={project.title} />
         ) : (
-          <div className="aspect-video relative rounded-xl overflow-hidden mb-8 bg-gray-100 dark:bg-gray-800">
+          <div className="relative rounded-xl overflow-hidden mb-8 bg-gray-100 dark:bg-gray-800 flex justify-center">
             <Image
               src={project.imageUrl}
               alt={project.title}
-              fill
-              className="object-cover"
+              width={450}
+              height={900}
+              className="max-h-[80vh] w-auto object-contain"
+              priority
             />
           </div>
         )}

@@ -50,28 +50,28 @@ export const projects = {
         ],
         tags: ['Dart', 'Flutter', 'Python', 'Supabase'],
         technologies: ['Dart', 'Flutter', 'Python', 'Supabase'],
-        liveUrl: 'https://github.com/charlcortez/Smart-Budgeter',
+        liveUrl: '#',
         githubUrl: 'https://github.com/Cha17/baidyet',
     },
     'project-2': {
         id: 'project-2',
-        title: 'Project Two',
-        description: 'Mobile app developed with React Native and Firebase.',
+        title: 'Smart Budgeter User Manual',
+        description: 'A user manual for the Smart Budgeter Android application.',
         fullDescription: `
-      A cross-platform mobile application that provides users with a seamless experience.
-      Built with React Native and Firebase, this app demonstrates mobile development best practices.
+      A user manual for the Smart Budgeter Android application.
 
-      Key Features:
-      - Cross-platform compatibility
-      - Real-time data sync
-      - Push notifications
-      - Offline support
+      Contents:
+      - Features Overview
+      - How to Use the App
+      - FAQ
+      - Troubleshooting
+      - Contact Support
     `,
-        imageUrl: '/project2.jpg',
-        tags: ['React Native', 'Firebase', 'Mobile'],
-        technologies: ['React Native', 'Firebase', 'TypeScript', 'Redux'],
-        liveUrl: 'https://project-two.com',
-        githubUrl: 'https://github.com/yourusername/project-two',
+        imageUrl: '/Smart Budgeter User Manual cover.png',
+        tags: ['Canva', 'User Manual'],
+        technologies: ['Canva'],
+        liveUrl: '#',
+        githubUrl: '#',
     },
     'project-3': {
         id: 'project-3',
