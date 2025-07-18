@@ -1,101 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import AnimatedElement from "../../components/AnimatedElement";
+import { getAllSkills } from "../actions/skills";
+import { getStatusFromLevel, type SkillStatus } from "@/utils/skills";
+import type { Skills } from "@/db/types.generated";
+import type { Selectable } from "kysely";
 
-const skillCategories = [
-  {
-    title: "Frontend Development",
-    icon: "💻",
-    skills: [
-      {
-        name: "React & Next.js",
-        status: "Practicing",
-        description:
-          "Building modern, responsive web applications with React and Next.js",
-      },
-      {
-        name: "TypeScript",
-        status: "Learning",
-        description:
-          "Writing type-safe JavaScript code for better maintainability",
-      },
-      {
-        name: "CSS & TailwindCSS",
-        status: "Growing",
-        description:
-          "Creating beautiful, responsive layouts with modern CSS frameworks",
-      },
-    ],
-  },
-  {
-    title: "Backend Development",
-    icon: "⚙️",
-    skills: [
-      {
-        name: "Node.js",
-        status: "Familiar",
-        description: "Building scalable server-side applications and APIs",
-      },
-      {
-        name: "Python",
-        status: "Learning",
-        description: "Data processing and backend development with Python",
-      },
-      {
-        name: "Databases",
-        status: "Familiar",
-        description: "Working with SQL and NoSQL databases",
-      },
-    ],
-  },
-  {
-    title: "Design",
-    icon: "🎨",
-    skills: [
-      {
-        name: "UI/UX Design",
-        status: "Practicing",
-        description: "Creating user-centered designs and interfaces",
-      },
-      {
-        name: "Figma",
-        status: "Growing",
-        description: "Prototyping and design system creation",
-      },
-      {
-        name: "Adobe Creative Suite",
-        status: "Familiar",
-        description: "Graphics and visual design",
-      },
-    ],
-  },
-  {
-    title: "Other Skills",
-    icon: "🔧",
-    skills: [
-      {
-        name: "DevOps",
-        status: "Learning",
-        description: "CI/CD, Docker, and cloud services",
-      },
-      {
-        name: "Testing",
-        status: "Familiar",
-        description: "Unit testing, integration testing, and E2E testing",
-      },
-      {
-        name: "Agile Methodologies",
-        status: "Practicing",
-        description: "Scrum and Kanban practices",
-      },
-    ],
-  },
-];
+const categoryIcons = {
+  "Frontend Development": "💻",
+  "Backend Development": "⚙️",
+  Design: "🎨",
+  "Other Skills": "🔧",
+} as const;
 
-const statusColors = {
+const statusColors: Record<SkillStatus, string> = {
   Learning:
     "text-purple-600 dark:text-purple-400 bg-purple-100 dark:bg-purple-900/30",
   Familiar: "text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/30",
@@ -105,13 +26,14 @@ const statusColors = {
     "text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-900/30",
 };
 
-const statusDescriptions = {
+const statusDescriptions: Record<SkillStatus, string> = {
   Learning: "Currently learning and building basic projects",
   Familiar: "Comfortable with fundamentals and can build simple features",
   Practicing: "Actively using in projects and expanding knowledge",
   Growing: "Regularly using and continuously improving",
 };
 
+// Keep the StatusLegend and LegendToggle components as they are
 function StatusLegend({ isVisible }: { isVisible: boolean }) {
   return (
     <div
@@ -132,7 +54,7 @@ function StatusLegend({ isVisible }: { isVisible: boolean }) {
             >
               <span
                 className={`px-3 py-1 rounded-full text-sm font-medium ${
-                  statusColors[status as keyof typeof statusColors]
+                  statusColors[status as SkillStatus]
                 }`}
               >
                 {status}
@@ -182,13 +104,15 @@ function LegendToggle({
 
 function SkillCard({
   name,
-  status,
+  level,
   description,
 }: {
   name: string;
-  status: string;
+  level: number;
   description: string;
 }) {
+  const status = getStatusFromLevel(level);
+
   return (
     <div className="group relative bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
       <div className="flex items-center justify-between mb-4">
@@ -196,9 +120,7 @@ function SkillCard({
           {name}
         </h3>
         <span
-          className={`px-3 py-1 rounded-full text-sm font-medium ${
-            statusColors[status as keyof typeof statusColors]
-          }`}
+          className={`px-3 py-1 rounded-full text-sm font-medium ${statusColors[status]}`}
         >
           {status}
         </span>
@@ -209,10 +131,51 @@ function SkillCard({
 }
 
 export default function SkillsPage() {
-  const [activeCategory, setActiveCategory] = useState(
-    skillCategories[0].title
-  );
+  const [skills, setSkills] = useState<Selectable<Skills>[]>([]);
+  const [categories, setCategories] = useState<string[]>([]);
+  const [activeCategory, setActiveCategory] = useState<string>("");
   const [isLegendVisible, setIsLegendVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadSkills() {
+      try {
+        const allSkills = await getAllSkills();
+        setSkills(allSkills);
+
+        // Extract unique categories and sort them
+        const uniqueCategories = Array.from(
+          new Set(allSkills.map((skill) => skill.category))
+        );
+        setCategories(uniqueCategories);
+
+        // Set initial active category
+        if (uniqueCategories.length > 0) {
+          setActiveCategory(uniqueCategories[0]);
+        }
+      } catch (error) {
+        console.error("Failed to load skills:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    loadSkills();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <>
+        <Header />
+        <div className="min-h-screen py-24 mt-10 flex items-center justify-center">
+          <div className="text-gray-600 dark:text-gray-400">
+            Loading skills...
+          </div>
+        </div>
+        <Footer />
+      </>
+    );
+  }
 
   return (
     <>
@@ -233,19 +196,22 @@ export default function SkillsPage() {
           </AnimatedElement>
 
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {skillCategories.map((category) => (
+            {categories.map((category) => (
               <button
-                key={category.title}
-                onClick={() => setActiveCategory(category.title)}
+                key={category}
+                onClick={() => setActiveCategory(category)}
                 className={`px-6 py-3 rounded-full text-lg font-medium transition-all duration-300 flex items-center gap-2
                   ${
-                    activeCategory === category.title
+                    activeCategory === category
                       ? "bg-[#457B9D] text-white shadow-lg scale-105"
                       : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700"
                   }`}
               >
-                <span>{category.icon}</span>
-                {category.title}
+                <span>
+                  {categoryIcons[category as keyof typeof categoryIcons] ||
+                    "🔧"}
+                </span>
+                {category}
               </button>
             ))}
           </div>
@@ -259,11 +225,16 @@ export default function SkillsPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skillCategories
-              .find((category) => category.title === activeCategory)
-              ?.skills.map((skill, index) => (
-                <AnimatedElement key={skill.name} delay={index * 100}>
-                  <SkillCard {...skill} />
+            {skills
+              .filter((skill) => skill.category === activeCategory)
+              .sort((a, b) => a.display_order - b.display_order)
+              .map((skill, index) => (
+                <AnimatedElement key={skill.id} delay={index * 100}>
+                  <SkillCard
+                    name={skill.name}
+                    level={skill.level}
+                    description={skill.description}
+                  />
                 </AnimatedElement>
               ))}
           </div>
