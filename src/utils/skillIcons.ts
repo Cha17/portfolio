@@ -33,6 +33,7 @@ export const skillIconMap: Record<string, string> = {
   "Swift": "logos:swift",
   "Kotlin": "logos:kotlin",
   "Android Studio": "logos:android-studio",
+  "Dart": "logos:dart",
 
   // Design
   "Figma": "logos:figma",

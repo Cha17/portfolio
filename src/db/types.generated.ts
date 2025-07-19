@@ -19,17 +19,48 @@ export interface DrizzleDrizzleMigrations {
   id: Generated<number>;
 }
 
+export interface ProjectFiles {
+  file_name: string;
+  file_url: string;
+  id: string;
+  project_id: string;
+}
+
+export interface ProjectImages {
+  id: string;
+  image_name: string;
+  image_url: string;
+  project_id: string;
+}
+
+export interface Projects {
+  created_at: Generated<Timestamp>;
+  description: string;
+  features: string[] | null;
+  full_description: string | null;
+  github_url: string | null;
+  id: string;
+  image_url: string | null;
+  live_url: string | null;
+  technologies: string[] | null;
+  title: string;
+  updated_at: Generated<Timestamp>;
+}
+
 export interface Skills {
   category: string;
   created_at: Generated<Timestamp>;
   description: string;
   id: Generated<number>;
-  status: string;
   name: string;
+  status: string;
   updated_at: Generated<Timestamp>;
 }
 
 export interface DB {
   "drizzle.__drizzle_migrations": DrizzleDrizzleMigrations;
+  project_files: ProjectFiles;
+  project_images: ProjectImages;
+  projects: Projects;
   skills: Skills;
 }

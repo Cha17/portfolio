@@ -48,6 +48,7 @@ export const projects = {
             '/assets/smart budgeter/16c. Income and Expense Classification-portrait.png',
             '/assets/smart budgeter/17a. Price Tracking-portrait.png',
         ],
+        features: ["Budget Allocation",  "Expense Tracking",  "AI Budget Generator", "Spending Analysis",  "Automatic Category/Expense Categorization", "Price Monitoring", "Financial Learning Materials"],
         tags: ['Dart', 'Flutter', 'Python', 'Supabase'],
         technologies: ['Dart', 'Flutter', 'Python', 'Supabase'],
         liveUrl: '#',
@@ -177,88 +178,6 @@ export const scholarship = [
     },
 ]
 
-export const skills = [
-    {
-        title: 'Frontend Development',
-        skills: [
-            {
-                name: 'React & Next.js',
-                level: 90,
-                description: 'Building modern, responsive web applications with React and Next.js',
-            },
-            {
-                name: 'TypeScript',
-                level: 85,
-                description: 'Writing type-safe JavaScript code for better maintainability',
-            },
-            {
-                name: 'CSS & TailwindCSS',
-                level: 95,
-                description: 'Creating beautiful, responsive layouts with modern CSS frameworks',
-            },
-        ],
-    },
-    {
-        title: 'Backend Development',
-        skills: [
-            {
-                name: 'Node.js',
-                level: 88,
-                description: 'Building scalable server-side applications and APIs',
-            },
-            {
-                name: 'Python',
-                level: 82,
-                description: 'Data processing and backend development with Python',
-            },
-            {
-                name: 'Databases',
-                level: 85,
-                description: 'Working with SQL and NoSQL databases',
-            },
-        ],
-    },
-    {
-        title: 'Design',
-        skills: [
-            {
-                name: 'UI/UX Design',
-                level: 88,
-                description: 'Creating user-centered designs and interfaces',
-            },
-            {
-                name: 'Figma',
-                level: 90,
-                description: 'Prototyping and design system creation',
-            },
-            {
-                name: 'Adobe Creative Suite',
-                level: 80,
-                description: 'Graphics and visual design',
-            },
-        ],
-    },
-    {
-        title: 'Other Skills',
-        skills: [
-            {
-                name: 'DevOps',
-                level: 75,
-                description: 'CI/CD, Docker, and cloud services',
-            },
-            {
-                name: 'Testing',
-                level: 85,
-                description: 'Unit testing, integration testing, and E2E testing',
-            },
-            {
-                name: 'Agile Methodologies',
-                level: 90,
-                description: 'Scrum and Kanban practices',
-            },
-        ],
-    },
-]
 
 export const navItems = [
     { label: 'About Me', href: '/about' },

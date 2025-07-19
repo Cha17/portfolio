@@ -4,36 +4,11 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import AnimatedElement from "../../components/AnimatedElement";
 import ProjectCard from "../../components/ProjectCard";
-import { projects } from "@/data/portfolio";
+import { getAllProjects } from "@/services/projects";
 
-// const projects = [
-//   {
-//     id: 'project-1',
-//     title: 'Project One',
-//     description: 'A beautiful web application built with Next.js and TailwindCSS.',
-//     imageUrl: '/project1.jpg',
-//     tags: ['Next.js', 'React', 'TailwindCSS'],
-//     projectUrl: '/projects/project-1',
-//   },
-//   {
-//     id: 'project-2',
-//     title: 'Project Two',
-//     description: 'Mobile app developed with React Native and Firebase.',
-//     imageUrl: '/project2.jpg',
-//     tags: ['React Native', 'Firebase', 'Mobile'],
-//     projectUrl: '/projects/project-2',
-//   },
-//   {
-//     id: 'project-3',
-//     title: 'Project Three',
-//     description: 'UI/UX design project for a modern dashboard interface.',
-//     imageUrl: '/project3.jpg',
-//     tags: ['UI/UX', 'Figma', 'Design'],
-//     projectUrl: '/projects/project-3',
-//   },
-// ]
+export default async function ProjectsPage() {
+  const projects = await getAllProjects();
 
-export default function ProjectsPage() {
   return (
     <>
       <Header />
@@ -51,10 +26,14 @@ export default function ProjectsPage() {
           </AnimatedElement>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Object.values(projects).map((project, index) => (
+            {projects.map((project, index) => (
               <AnimatedElement key={project.id} delay={index * 100}>
                 <ProjectCard
-                  {...project}
+                  id={project.id}
+                  title={project.title}
+                  description={project.description}
+                  imageUrl={project.image_url || ""}
+                  technologies={project.technologies || []}
                   projectUrl={`/projects/${project.id}`}
                 />
               </AnimatedElement>

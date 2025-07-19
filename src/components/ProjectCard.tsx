@@ -1,19 +1,23 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from "next/image";
+import Link from "next/link";
+import { Icon } from "@iconify/react";
+import { getSkillIcon } from "@/utils/skillIcons";
 
 interface ProjectCardProps {
-  title: string
-  description: string
-  imageUrl: string
-  tags: string[]
-  projectUrl: string
+  id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  technologies: string[];
+  projectUrl: string;
 }
 
 export default function ProjectCard({
+  id,
   title,
   description,
   imageUrl,
-  tags,
+  technologies,
   projectUrl,
 }: ProjectCardProps) {
   return (
@@ -27,16 +31,28 @@ export default function ProjectCard({
         />
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{title}</h3>
+        <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+          {title}
+        </h3>
         <p className="text-gray-600 dark:text-gray-400 mb-4">{description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
-          {tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm"
+          {technologies?.map((tech) => (
+            <div
+              key={tech}
+              className="flex items-center bg-gray-100 dark:bg-gray-800 rounded-full transition-all duration-200 hover:pr-3"
             >
-              {tag}
-            </span>
+              <div className="peer p-2">
+                <Icon
+                  icon={getSkillIcon(tech)}
+                  className="w-5 h-5 text-gray-800 dark:text-gray-200"
+                />
+              </div>
+              <div className="overflow-hidden w-0 peer-hover:w-auto transition-all duration-200">
+                <span className="text-sm text-gray-800 dark:text-gray-200 whitespace-nowrap px-1">
+                  {tech}
+                </span>
+              </div>
+            </div>
           ))}
         </div>
         <Link
@@ -60,5 +76,5 @@ export default function ProjectCard({
         </Link>
       </div>
     </div>
-  )
-} 
+  );
+}

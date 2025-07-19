@@ -5,24 +5,34 @@ import Image from "next/image";
 import AnimatedElement from "./AnimatedElement";
 import ImageSlideshow from "./ImageSlideshow";
 
-interface Project {
-  id: string;
+interface ProjectImage {
+  url: string;
+  name: string;
+}
+
+interface ProjectContentProps {
   title: string;
   description: string;
   fullDescription: string;
   imageUrl: string;
-  images?: string[];
-  tags: string[];
+  images: ProjectImage[];
   technologies: string[];
+  features: string[];
   liveUrl: string;
   githubUrl: string;
 }
 
-interface ProjectContentProps {
-  project: Project;
-}
-
-export default function ProjectContent({ project }: ProjectContentProps) {
+export default function ProjectContent({
+  title,
+  description,
+  fullDescription,
+  imageUrl,
+  images,
+  technologies,
+  features,
+  liveUrl,
+  githubUrl,
+}: ProjectContentProps) {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <AnimatedElement>
@@ -48,28 +58,29 @@ export default function ProjectContent({ project }: ProjectContentProps) {
           </Link>
 
           <h1 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-            {project.title}
+            {title}
           </h1>
-          <div className="flex flex-wrap gap-2 mb-6">
-            {project.tags.map((tag) => (
+          {/* <div className="flex flex-wrap gap-2 mb-6">
+            {technologies.map((tech) => (
               <span
-                key={tag}
+                key={tech}
                 className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm"
               >
-                {tag}
+                {tech}
               </span>
             ))}
-          </div>
+          </div> */}
         </div>
       </AnimatedElement>
+
       <AnimatedElement delay={100}>
-        {project.images && project.images.length > 0 ? (
-          <ImageSlideshow images={project.images} title={project.title} />
+        {images && images.length > 0 ? (
+          <ImageSlideshow images={images} title={title} />
         ) : (
           <div className="relative rounded-xl overflow-hidden mb-8 bg-gray-100 dark:bg-gray-800 flex justify-center">
             <Image
-              src={project.imageUrl}
-              alt={project.title}
+              src={imageUrl}
+              alt={title}
               width={450}
               height={900}
               className="max-h-[80vh] w-auto object-contain"
@@ -85,16 +96,29 @@ export default function ProjectContent({ project }: ProjectContentProps) {
             Project Overview
           </h2>
           <p className="whitespace-pre-line text-gray-600 dark:text-gray-400">
-            {project.fullDescription}
+            {fullDescription}
           </p>
         </div>
+
+        {features && features.length > 0 && (
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+              Key Features
+            </h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400">
+              {features.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         <div className="mb-12">
           <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
             Technologies Used
           </h2>
           <div className="flex flex-wrap gap-2">
-            {project.technologies.map((tech) => (
+            {technologies.map((tech) => (
               <span
                 key={tech}
                 className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg text-sm"
@@ -106,22 +130,26 @@ export default function ProjectContent({ project }: ProjectContentProps) {
         </div>
 
         <div className="flex gap-4">
-          <Link
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg transition-colors"
-          >
-            View Live Site
-          </Link>
-          <Link
-            href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 border border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 rounded-lg transition-colors dark:text-gray-300"
-          >
-            View Source
-          </Link>
+          {liveUrl && (
+            <Link
+              href={liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg transition-colors"
+            >
+              View Live Site
+            </Link>
+          )}
+          {githubUrl && (
+            <Link
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 border border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 rounded-lg transition-colors dark:text-gray-300"
+            >
+              View Source
+            </Link>
+          )}
         </div>
       </AnimatedElement>
     </div>
