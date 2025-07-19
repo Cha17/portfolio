@@ -1,3 +1,5 @@
+import { features } from "process"
+
 export const personalInfo = {
     name: 'Charl Cortez',
     role: 'Software Engineer & Designer',
@@ -95,6 +97,24 @@ export const projects = {
         technologies: ['Figma', 'Adobe XD', 'Photoshop'],
         liveUrl: 'https://project-three.com',
         githubUrl: 'https://github.com/yourusername/project-three',
+    },
+    'project-4': {
+        id: 'project-4',
+        title: 'Pathway to Academic Progress and Success (PAPS): University Admission Management for Optimization',
+        description: 'A web-based system for managing university admission processes.',
+        fullDescription: `
+      A web-based system for managing university admission processes, including application tracking, document management, and communication tools.
+      Created with modern design principles and attention to detail. 
+    `,
+    features: [
+        'Application Tracking',
+        'Document Management',
+        'Communication Tools',
+    ],
+    tags: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
+    technologies: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "PHP", "MySQL"],
+    liveUrl: 'https://github.com/Cha17/paps',
+    githubUrl: 'https://github.com/Cha17/paps',
     },
 }
 
