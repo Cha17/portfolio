@@ -1,0 +1,1 @@
+ALTER TABLE "projects" ADD COLUMN "display_pdf" boolean DEFAULT false NOT NULL;

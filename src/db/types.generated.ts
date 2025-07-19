@@ -36,6 +36,7 @@ export interface ProjectImages {
 export interface Projects {
   created_at: Generated<Timestamp>;
   description: string;
+  display_pdf: Generated<boolean>;
   features: string[] | null;
   full_description: string | null;
   github_url: string | null;

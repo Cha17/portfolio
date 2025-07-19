@@ -12,68 +12,70 @@ export const personalInfo = {
 }
 
 export const projects = {
-    'project-1': {
-        id: 'project-1',
-        title: 'Smart Budgeter: An Artificial Intelligence Android Application Budgeting Assistant for Proactive Financial Management',
-        description: 'An Artificial Intelligence (AI) Android application that helps users manage their finances by providing a budget planner and expense tracker.',
-        fullDescription: `
-     The study developed SMART BUDGETER, an artificial intelligence (AI) Android application that helps users manage their personal finances more effectively. The application solves common problems such as manual expense tracking and lack of financial knowledge. Key features include automatic transaction categorization, budget planning, analysis of spending patterns, and access to financial learning materials. The development followed the Agile Scrum method, with user needs identified through research and observation. The application was created using Dart and Python with the Flutter framework and Supabase database, and was tested by IT professionals, financial experts, and general users using ISO 25010 standards.
+    // 'project-1': {
+    //     id: 'project-1',
+    //     title: 'Smart Budgeter: An Artificial Intelligence Android Application Budgeting Assistant for Proactive Financial Management',
+    //     description: 'An Artificial Intelligence (AI) Android application that helps users manage their finances by providing a budget planner and expense tracker.',
+    //     fullDescription: `
+    //  The study developed SMART BUDGETER, an artificial intelligence (AI) Android application that helps users manage their personal finances more effectively. The application solves common problems such as manual expense tracking and lack of financial knowledge. Key features include automatic transaction categorization, budget planning, analysis of spending patterns, and access to financial learning materials. The development followed the Agile Scrum method, with user needs identified through research and observation. The application was created using Dart and Python with the Flutter framework and Supabase database, and was tested by IT professionals, financial experts, and general users using ISO 25010 standards.
 
-      Key Features:
-      - Budget Allocation
-      - Expense Tracking
-      - AI Budget Generator
-      - Automatic Category/Expense Categorization
-      - Price Monitoring
-      - Financial Learning Materials
-    `,
-        imageUrl: '/smartbud-bg.png',
-        images: [
-            '/assets/smart budgeter/3b. Sign-Up and Sign-In-portrait.png',
-            '/assets/smart budgeter/3c. Sign-Up and Sign-In-portrait.png',
-            '/assets/smart budgeter/4a. Forgot Password-portrait.png',
-            '/assets/smart budgeter/4c. Forgot Password-portrait.png',
-            '/assets/smart budgeter/5a. Financial Assessment-portrait.png',
-            '/assets/smart budgeter/5c. Financial Assessment-portrait.png',
-            '/assets/smart budgeter/5d. Financial Assessment-portrait.png',
-            '/assets/smart budgeter/6a. Budget Input-portrait.png',
-            '/assets/smart budgeter/6b. Budget Input-portrait.png',
-            '/assets/smart budgeter/6c. Budget Input-portrait.png',
-            '/assets/smart budgeter/6d. Budget Input-portrait.png',
-            '/assets/smart budgeter/6e. Budget Input-portrait.png',
-            '/assets/smart budgeter/6f. Budget Input-portrait.png',
-            '/assets/smart budgeter/7a. Budget Allocation-portrait.png',
-            '/assets/smart budgeter/7b. Budget Allocation-portrait.png',
-            '/assets/smart budgeter/9a. Homepage Interface-portrait.png',
-            '/assets/smart budgeter/16c. Income and Expense Classification-portrait.png',
-            '/assets/smart budgeter/17a. Price Tracking-portrait.png',
-        ],
-        features: ["Budget Allocation",  "Expense Tracking",  "AI Budget Generator", "Spending Analysis",  "Automatic Category/Expense Categorization", "Price Monitoring", "Financial Learning Materials"],
-        tags: ['Dart', 'Flutter', 'Python', 'Supabase'],
-        technologies: ['Dart', 'Flutter', 'Python', 'Supabase'],
-        liveUrl: '#',
-        githubUrl: 'https://github.com/Cha17/baidyet',
-    },
-    'project-2': {
-        id: 'project-2',
-        title: 'Smart Budgeter User Manual',
-        description: 'A user manual for the Smart Budgeter Android application.',
-        fullDescription: `
-      A user manual for the Smart Budgeter Android application.
+    //   Key Features:
+    //   - Budget Allocation
+    //   - Expense Tracking
+    //   - AI Budget Generator
+    //   - Automatic Category/Expense Categorization
+    //   - Price Monitoring
+    //   - Financial Learning Materials
+    // `,
+    //     imageUrl: '/smartbud-bg.png',
+    //     images: [
+    //         '/assets/smart budgeter/3b. Sign-Up and Sign-In-portrait.png',
+    //         '/assets/smart budgeter/3c. Sign-Up and Sign-In-portrait.png',
+    //         '/assets/smart budgeter/4a. Forgot Password-portrait.png',
+    //         '/assets/smart budgeter/4c. Forgot Password-portrait.png',
+    //         '/assets/smart budgeter/5a. Financial Assessment-portrait.png',
+    //         '/assets/smart budgeter/5c. Financial Assessment-portrait.png',
+    //         '/assets/smart budgeter/5d. Financial Assessment-portrait.png',
+    //         '/assets/smart budgeter/6a. Budget Input-portrait.png',
+    //         '/assets/smart budgeter/6b. Budget Input-portrait.png',
+    //         '/assets/smart budgeter/6c. Budget Input-portrait.png',
+    //         '/assets/smart budgeter/6d. Budget Input-portrait.png',
+    //         '/assets/smart budgeter/6e. Budget Input-portrait.png',
+    //         '/assets/smart budgeter/6f. Budget Input-portrait.png',
+    //         '/assets/smart budgeter/7a. Budget Allocation-portrait.png',
+    //         '/assets/smart budgeter/7b. Budget Allocation-portrait.png',
+    //         '/assets/smart budgeter/9a. Homepage Interface-portrait.png',
+    //         '/assets/smart budgeter/16c. Income and Expense Classification-portrait.png',
+    //         '/assets/smart budgeter/17a. Price Tracking-portrait.png',
+    //     ],
+    //     features: ["Budget Allocation",  "Expense Tracking",  "AI Budget Generator", "Spending Analysis",  "Automatic Category/Expense Categorization", "Price Monitoring", "Financial Learning Materials"],
+    //     tags: ['Dart', 'Flutter', 'Python', 'Supabase'],
+    //     technologies: ['Dart', 'Flutter', 'Python', 'Supabase'],
+    //     liveUrl: '#',
+    //     githubUrl: 'https://github.com/Cha17/baidyet',
+    // },
+    // 'project-2': {
+    //     id: 'project-2',
+    //     title: 'Smart Budgeter User Manual',
+    //     description: 'A user manual for the Smart Budgeter Android application.',
+    //     fullDescription: `
+    //   A user manual for the Smart Budgeter Android application. The user manual is a guide that helps users understand how to use the Smart Budgeter Android application. It is a comprehensive guide that covers all the features of the application and how to use them.
 
-      Contents:
-      - Features Overview
-      - How to Use the App
-      - FAQ
-      - Troubleshooting
-      - Contact Support
-    `,
-        imageUrl: '/Smart Budgeter User Manual cover.png',
-        tags: ['Canva', 'User Manual'],
-        technologies: ['Canva'],
-        liveUrl: '#',
-        githubUrl: '#',
-    },
+    //   Contents:
+    //   [
+    //     "Features Overview",
+    //     "How to Use the App",
+    //     "Frequently Asked Questions",
+    //     "Troubleshooting",
+    //     "Contact Support"
+    //   ]
+    // `,
+    //     imageUrl: '/Smart Budgeter User Manual cover.png',
+    //     tags: ['Canva', 'User Manual'],
+    //     technologies: ['Canva'],
+    //     liveUrl: '#',
+    //     githubUrl: '#',
+    // },
     'project-3': {
         id: 'project-3',
         title: 'Project Three',

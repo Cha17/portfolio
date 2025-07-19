@@ -20,6 +20,7 @@ interface ProjectContentProps {
   features: string[];
   liveUrl: string;
   githubUrl: string;
+  displayPdf: boolean;
 }
 
 export default function ProjectContent({
@@ -32,6 +33,7 @@ export default function ProjectContent({
   features,
   liveUrl,
   githubUrl,
+  displayPdf,
 }: ProjectContentProps) {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

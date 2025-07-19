@@ -32,6 +32,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             features={project.features || []}
             liveUrl={project.live_url || ""}
             githubUrl={project.github_url || ""}
+            displayPdf={project.display_pdf || false}
+            // files={project.files || []}
           />
         </div>
       </main>

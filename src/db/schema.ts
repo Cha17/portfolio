@@ -1,5 +1,5 @@
 // Import necessary types from Drizzle ORM for PostgreSQL
-import { pgTable, serial, text, integer, timestamp, varchar } from "drizzle-orm/pg-core";
+import { pgTable, serial, text, integer, timestamp, varchar, boolean } from "drizzle-orm/pg-core";
 
 // Define the skills table
 export const skills = pgTable("skills", {
@@ -30,6 +30,7 @@ export const projects = pgTable("projects", {
 	liveUrl: text("live_url"),
 	githubUrl: text("github_url"),
 	technologies: text("technologies").array(),
+	displayPdf: boolean("display_pdf").notNull().default(false),
 	createdAt: timestamp("created_at", { mode: 'string' }).defaultNow().notNull(),
 	updatedAt: timestamp("updated_at", { mode: 'string' }).defaultNow().notNull(),
 });
