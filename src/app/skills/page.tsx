@@ -1,36 +1,42 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Icon } from "@iconify/react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import AnimatedElement from "../../components/AnimatedElement";
 import { getAllSkills } from "../actions/skills";
-import { getStatusFromLevel, type SkillStatus } from "@/utils/skills";
+import { type SkillStatus } from "@/db/schema";
+import { getSkillIcon } from "@/utils/skillIcons";
 import type { Skills } from "@/db/types.generated";
 import type { Selectable } from "kysely";
 
 const categoryIcons = {
   "Frontend Development": "💻",
   "Backend Development": "⚙️",
+  "Mobile Development": "📱",
   Design: "🎨",
-  "Other Skills": "🔧",
+  "DevOps & Cloud": "☁️",
+  "Testing & QA": "🧪",
+  "Version Control": "🔄",
+  Others: "🛠️",
 } as const;
 
 const statusColors: Record<SkillStatus, string> = {
-  Learning:
-    "text-purple-600 dark:text-purple-400 bg-purple-100 dark:bg-purple-900/30",
-  Familiar: "text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/30",
-  Practicing:
+  Beginner: "text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/30",
+  Intermediate:
     "text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/30",
-  Growing:
+  Competent:
+    "text-purple-600 dark:text-purple-400 bg-purple-100 dark:bg-purple-900/30",
+  Experienced:
     "text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-900/30",
 };
 
 const statusDescriptions: Record<SkillStatus, string> = {
-  Learning: "Currently learning and building basic projects",
-  Familiar: "Comfortable with fundamentals and can build simple features",
-  Practicing: "Actively using in projects and expanding knowledge",
-  Growing: "Regularly using and continuously improving",
+  Beginner: "Building foundational knowledge and working on basic projects",
+  Intermediate: "Comfortable with core concepts and creating standard features",
+  Competent: "Reliable understanding with consistent practical application",
+  Experienced: "Strong practical knowledge with proven project implementations",
 };
 
 // Keep the StatusLegend and LegendToggle components as they are
@@ -104,21 +110,26 @@ function LegendToggle({
 
 function SkillCard({
   name,
-  level,
+  status,
   description,
 }: {
   name: string;
-  level: number;
+  status: SkillStatus;
   description: string;
 }) {
-  const status = getStatusFromLevel(level);
+  const iconName = getSkillIcon(name);
 
   return (
     <div className="group relative bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-      <div className="flex items-center justify-between mb-4">
-        <h3 className="font-semibold text-xl text-gray-900 dark:text-white">
-          {name}
-        </h3>
+      <div className="flex items-start justify-between mb-4">
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 flex items-center justify-center">
+            <Icon icon={iconName} className="w-8 h-8" />
+          </div>
+          <h3 className="font-semibold text-xl text-gray-900 dark:text-white">
+            {name}
+          </h3>
+        </div>
         <span
           className={`px-3 py-1 rounded-full text-sm font-medium ${statusColors[status]}`}
         >
@@ -146,13 +157,8 @@ export default function SkillsPage() {
         // Extract unique categories and sort them
         const uniqueCategories = Array.from(
           new Set(allSkills.map((skill) => skill.category))
-        );
+        ).sort();
         setCategories(uniqueCategories);
-
-        // Set initial active category
-        if (uniqueCategories.length > 0) {
-          setActiveCategory(uniqueCategories[0]);
-        }
       } catch (error) {
         console.error("Failed to load skills:", error);
       } finally {
@@ -196,11 +202,23 @@ export default function SkillsPage() {
           </AnimatedElement>
 
           <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <button
+              onClick={() => setActiveCategory("")}
+              className={`px-5 py-2 rounded-full text-base font-medium transition-all duration-300 flex items-center gap-2
+                ${
+                  activeCategory === ""
+                    ? "bg-[#457B9D] text-white shadow-lg scale-105"
+                    : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700"
+                }`}
+            >
+              <span>🔍</span>
+              All Skills
+            </button>
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-6 py-3 rounded-full text-lg font-medium transition-all duration-300 flex items-center gap-2
+                className={`px-5 py-2 rounded-full text-base font-medium transition-all duration-300 flex items-center gap-2
                   ${
                     activeCategory === category
                       ? "bg-[#457B9D] text-white shadow-lg scale-105"
@@ -224,19 +242,51 @@ export default function SkillsPage() {
             <StatusLegend isVisible={isLegendVisible} />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skills
-              .filter((skill) => skill.category === activeCategory)
-              .sort((a, b) => a.display_order - b.display_order)
-              .map((skill, index) => (
-                <AnimatedElement key={skill.id} delay={index * 100}>
-                  <SkillCard
-                    name={skill.name}
-                    level={skill.level}
-                    description={skill.description}
-                  />
-                </AnimatedElement>
-              ))}
+          <div className="space-y-12">
+            {activeCategory === "" ? (
+              // Show all categories
+              categories.map((category) => (
+                <div key={category} className="space-y-6">
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                    <span>
+                      {categoryIcons[category as keyof typeof categoryIcons] ||
+                        "🔧"}
+                    </span>
+                    {category}
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {skills
+                      .filter((skill) => skill.category === category)
+                      .sort((a, b) => a.name.localeCompare(b.name))
+                      .map((skill, index) => (
+                        <AnimatedElement key={skill.id} delay={index * 100}>
+                          <SkillCard
+                            name={skill.name}
+                            status={skill.status as SkillStatus}
+                            description={skill.description}
+                          />
+                        </AnimatedElement>
+                      ))}
+                  </div>
+                </div>
+              ))
+            ) : (
+              // Show filtered category
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {skills
+                  .filter((skill) => skill.category === activeCategory)
+                  .sort((a, b) => a.name.localeCompare(b.name))
+                  .map((skill, index) => (
+                    <AnimatedElement key={skill.id} delay={index * 100}>
+                      <SkillCard
+                        name={skill.name}
+                        status={skill.status as SkillStatus}
+                        description={skill.description}
+                      />
+                    </AnimatedElement>
+                  ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

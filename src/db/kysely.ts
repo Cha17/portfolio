@@ -14,6 +14,9 @@ export const db = new Kysely<DB>({
   dialect,
 });
 
+
+
+
 // Export the database type and query builder type
 export type Database = DB;
 export type { Kysely }; 

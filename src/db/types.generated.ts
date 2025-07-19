@@ -23,9 +23,8 @@ export interface Skills {
   category: string;
   created_at: Generated<Timestamp>;
   description: string;
-  display_order: number;
   id: Generated<number>;
-  level: number;
+  status: string;
   name: string;
   updated_at: Generated<Timestamp>;
 }

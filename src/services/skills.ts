@@ -9,7 +9,7 @@ export const skillsService = {
       .selectFrom('skills')
       .selectAll()
       .orderBy('category')
-      .orderBy('display_order')
+      .orderBy('name')
       .execute();
   },
 
@@ -19,7 +19,7 @@ export const skillsService = {
       .selectFrom('skills')
       .selectAll()
       .where('category', '=', category)
-      .orderBy('display_order')
+      .orderBy('name')
       .execute();
   },
 

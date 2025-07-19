@@ -14,6 +14,7 @@
     "db:types": "kysely-codegen"
   },
   "dependencies": {
+    "@iconify/react": "^6.0.0",
     "@libsql/client": "^0.15.10",
     "@neondatabase/serverless": "^1.0.1",
     "dotenv-safe": "^9.1.0",
@@ -25,7 +26,9 @@
     "pg": "^8.16.3",
     "postcss": "^8.5.6",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "react-icons": "^5.5.0",
+    "simple-icons": "^15.6.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
