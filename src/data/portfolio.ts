@@ -100,6 +100,27 @@ export const projects = {
     },
     'project-4': {
         id: 'project-4',
+        title: 'Project Four',
+        description: 'UI/UX design project for a modern dashboard interface.',
+        fullDescription: `
+      A comprehensive dashboard design project that focuses on user experience and interface design.
+      Created with modern design principles and attention to detail.
+
+      Key Features:
+      - Intuitive navigation
+      - Data visualization
+      - Customizable widgets
+      - Accessibility focused
+    `,
+        imageUrl: '/project3.jpg',
+        tags: ['UI/UX', 'Figma', 'Design'],
+        technologies: ['Figma', 'Adobe XD', 'Photoshop'],
+        liveUrl: 'https://project-three.com',
+        githubUrl: 'https://github.com/yourusername/project-three',
+    },
+
+    'project-5': {
+        id: 'project-5',
         title: 'Pathway to Academic Progress and Success (PAPS): University Admission Management for Optimization',
         description: 'A web-based system for managing university admission processes.',
         fullDescription: `
@@ -115,6 +136,21 @@ export const projects = {
     technologies: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "PHP", "MySQL"],
     liveUrl: 'https://github.com/Cha17/paps',
     githubUrl: 'https://github.com/Cha17/paps',
+    },
+
+    'project-6': {
+        id: 'project-6',
+        title: 'G! Arat Na: Enhancing Efficiency and Accessibility Through a Web-Based Event Registration System for Cavite State University - Bacoor Campus',
+        cdescription: 'A comprehensive web-based event registration system designed for Cavite State University - Bacoor Campus to optimize and automate event management processes.',
+        fullDescription: `
+      A modern web-based event registration system that revolutionizes how CvSU Bacoor manages and conducts event registrations. The system offers a comprehensive solution for both event organizers and participants, featuring automated workflows and real-time processing capabilities. Developed as a project for the Programming Languages course, this system showcases the practical implementation of various programming languages and web technologies to address the university's event management needs.
+    `,
+        features: ["Online Registration Forms", "QR Code Generation after Registration", "QR Code Scanning for Event Attendance and Payment", "Administrative Dashboard", "Event Management"],
+        tags: ['Web Development', 'Event Management', 'University System'],
+        technologies: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "PHP", "MySQL"],
+        
+        liveUrl: '#',
+        githubUrl: 'https://github.com/Cha17/g-arat-na',
     },
 }
 
