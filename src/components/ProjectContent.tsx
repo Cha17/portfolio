@@ -20,7 +20,6 @@ interface ProjectContentProps {
   features: string[];
   liveUrl: string;
   githubUrl: string;
-  displayPdf: boolean;
 }
 
 export default function ProjectContent({

@@ -7,11 +7,12 @@ import ProjectCard from "../../components/ProjectCard";
 import { getAllProjects } from "@/services/projects";
 
 type Props = {
-  searchParams: { skill?: string };
+  searchParams: Promise<{ skill?: string }>;
 };
 
 export default async function ProjectsPage({ searchParams }: Props) {
-  const { skill } = searchParams;
+  // Await the searchParams since it's now a Promise
+  const { skill } = await searchParams;
   const projects = await getAllProjects(skill);
 
   return (

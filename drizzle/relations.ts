@@ -1,5 +1,5 @@
 import { relations } from "drizzle-orm/relations";
-import { projects, projectFiles, projectImages } from "./schema";
+import { projects, projectFiles, projectImages } from "@/db/schema";
 
 export const projectFilesRelations = relations(projectFiles, ({one}) => ({
 	project: one(projects, {
