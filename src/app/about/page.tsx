@@ -203,7 +203,9 @@ export default function AboutPage() {
           {/* Call to Action */}
           <AnimatedElement delay={400}>
             <div className="text-center bg-gray-50 dark:bg-gray-800 rounded-xl p-8">
-              <h2 className="text-2xl font-bold mb-4">Let's Work Together</h2>
+              <h2 className="text-2xl font-bold mb-4">
+                Let&apos;s Work Together
+              </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-6">
                 Interested in collaborating or want to learn more about my work?
               </p>
