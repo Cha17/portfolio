@@ -9,6 +9,7 @@ import {
   achievements,
   education,
   experiences,
+  presentations,
   scholarship,
 } from "@/data/portfolio";
 
@@ -46,18 +47,18 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-4 text-gray-600 dark:text-gray-400 text-justify">
                   <p>
-                    I&apos;m passionate about front-end, web, and mobile
-                    application development, with a focus on creating intuitive
-                    user experiences. I have a solid foundation in web
-                    development technologies and am actively enhancing my
-                    back-end skills to become a well-rounded developer.
+                    I'm passionate about front-end, web, and mobile application
+                    development, with a focus on creating intuitive user
+                    experiences. I have a solid foundation in web development
+                    technologies and am actively enhancing my back-end skills to
+                    become a well-rounded developer.
                   </p>
                   <p>
                     I believe in crafting clean, user-centric interfaces that
                     solve real-world problems. Beyond coding, I enjoy designing,
                     drawing, and painting, which fuel my creativity. As a
-                    lifelong learner, I&apos;m eager to explore new technologies
-                    and contribute to innovative projects.
+                    lifelong learner, I'm eager to explore new technologies and
+                    contribute to innovative projects.
                   </p>
                   <p>
                     Driven by my Filipino roots, I aim to build technology
@@ -203,9 +204,7 @@ export default function AboutPage() {
           {/* Call to Action */}
           <AnimatedElement delay={400}>
             <div className="text-center bg-gray-50 dark:bg-gray-800 rounded-xl p-8">
-              <h2 className="text-2xl font-bold mb-4">
-                Let&apos;s Work Together
-              </h2>
+              <h2 className="text-2xl font-bold mb-4">Let's Work Together</h2>
               <p className="text-gray-600 dark:text-gray-400 mb-6">
                 Interested in collaborating or want to learn more about my work?
               </p>

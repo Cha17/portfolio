@@ -18,9 +18,9 @@ interface ProjectContentProps {
   images: ProjectImage[];
   technologies: string[];
   features: string[];
-  liveUrl?: string;
-  githubUrl?: string;
-  displayPdf?: boolean;
+  liveUrl: string;
+  githubUrl: string;
+  displayPdf: boolean;
 }
 
 export default function ProjectContent({
@@ -62,7 +62,7 @@ export default function ProjectContent({
           <h1 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
             {title}
           </h1>
-          <div className="flex flex-wrap gap-2 mb-6">
+          {/* <div className="flex flex-wrap gap-2 mb-6">
             {technologies.map((tech) => (
               <span
                 key={tech}
@@ -71,13 +71,13 @@ export default function ProjectContent({
                 {tech}
               </span>
             ))}
-          </div>
+          </div> */}
         </div>
       </AnimatedElement>
 
       <AnimatedElement delay={100}>
         {images && images.length > 0 ? (
-          <ImageSlideshow images={images.map((img) => img.url)} />
+          <ImageSlideshow images={images} title={title} />
         ) : (
           <div className="relative rounded-xl overflow-hidden mb-8 bg-gray-100 dark:bg-gray-800 flex justify-center">
             <Image

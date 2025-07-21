@@ -4,36 +4,11 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ProjectCard from "../components/ProjectCard";
 import AnimatedElement from "../components/AnimatedElement";
+import { getAllProjects } from "@/services/projects";
 
-const projects = [
-  {
-    id: "project-1",
-    title: "Project One",
-    description:
-      "A beautiful web application built with Next.js and TailwindCSS.",
-    imageUrl: "/project1.jpg",
-    technologies: ["Next.js", "React", "TailwindCSS"],
-    projectUrl: "/projects/project-1",
-  },
-  {
-    id: "project-2",
-    title: "Project Two",
-    description: "Mobile app developed with React Native and Firebase.",
-    imageUrl: "/project2.jpg",
-    technologies: ["React Native", "Firebase", "Mobile"],
-    projectUrl: "/projects/project-2",
-  },
-  {
-    id: "project-3",
-    title: "Project Three",
-    description: "UI/UX design project for a modern dashboard interface.",
-    imageUrl: "/project3.jpg",
-    technologies: ["UI/UX", "Figma", "Design"],
-    projectUrl: "/projects/project-3",
-  },
-];
+export default async function HomePage() {
+  const projects = await getAllProjects();
 
-export default function HomePage() {
   return (
     <>
       <Header />
@@ -71,14 +46,18 @@ export default function HomePage() {
               </div>
             </AnimatedElement>
             <AnimatedElement delay={200}>
-              <div className="relative h-[400px] w-full">
-                <Image
-                  src="/globe.svg"
-                  alt="Decorative globe illustration"
-                  fill
-                  className="object-contain dark:invert"
-                  priority
-                />
+              <div className="relative h-[400px] w-full flex justify-center items-center">
+                <div className="relative w-[350px] h-[350px] rounded-full overflow-hidden border-4 border-[#457B9D] dark:border-[#457EAF] shadow-lg">
+                  <Image
+                    src="/sample.webp"
+                    alt="Charl Cortez"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+                {/* Decorative circle in the background */}
+                <div className="absolute w-[380px] h-[380px] rounded-full border-2 border-dashed border-[#457B9D] dark:border-[#457EAF] opacity-50 animate-spin-slow"></div>
               </div>
             </AnimatedElement>
           </div>
@@ -96,9 +75,16 @@ export default function HomePage() {
           </AnimatedElement>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => (
+              {projects.slice(0, 3).map((project, index) => (
                 <AnimatedElement key={project.id} delay={index * 100}>
-                  <ProjectCard {...project} />
+                  <ProjectCard
+                    id={project.id}
+                    title={project.title}
+                    description={project.description}
+                    imageUrl={project.image_url || ""}
+                    technologies={project.technologies || []}
+                    projectUrl={`/projects/${project.id}`}
+                  />
                 </AnimatedElement>
               ))}
             </div>

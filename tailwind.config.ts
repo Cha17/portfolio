@@ -16,6 +16,9 @@ const config: Config = {
                 sans: ['var(--font-sans)'],
                 mono: ['var(--font-mono)'],
             },
+            animation: {
+                'spin-slow': 'spin 20s linear infinite',
+            },
         },
     },
     plugins: [],
