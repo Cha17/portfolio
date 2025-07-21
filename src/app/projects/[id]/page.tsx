@@ -4,13 +4,12 @@ import Footer from "@/components/Footer";
 import ProjectContent from "@/components/ProjectContent";
 import { getProjectById } from "@/services/projects";
 
-interface ProjectPageProps {
-  params: {
-    id: string;
-  };
-}
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
+export default async function ProjectPage({ params }: Props) {
   const project = await getProjectById(params.id);
 
   if (!project) {
