@@ -1,15 +1,17 @@
 import { notFound } from "next/navigation";
+import { NextPage } from "next"; // Import NextPage for explicit typing
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProjectContent from "@/components/ProjectContent";
 import { getProjectById } from "@/services/projects";
 
+// Use Next.js's built-in types
 type Props = {
   params: { id: string };
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export default async function ProjectPage({ params }: Props) {
+const ProjectPage: NextPage<Props> = async ({ params }) => {
   const project = await getProjectById(params.id);
 
   if (!project) {
@@ -39,4 +41,6 @@ export default async function ProjectPage({ params }: Props) {
       <Footer />
     </>
   );
-}
+};
+
+export default ProjectPage;
