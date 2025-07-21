@@ -6,8 +6,13 @@ import AnimatedElement from "../../components/AnimatedElement";
 import ProjectCard from "../../components/ProjectCard";
 import { getAllProjects } from "@/services/projects";
 
-export default async function ProjectsPage() {
-  const projects = await getAllProjects();
+type Props = {
+  searchParams: { skill?: string };
+};
+
+export default async function ProjectsPage({ searchParams }: Props) {
+  const { skill } = searchParams;
+  const projects = await getAllProjects(skill);
 
   return (
     <>
@@ -16,12 +21,22 @@ export default async function ProjectsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedElement>
             <div className="text-center mb-12">
-              <h1 className="text-4xl font-bold mb-4">My Projects</h1>
+              <h1 className="text-4xl font-bold mb-4">
+                {skill ? `Projects using ${skill}` : "My Projects"}
+              </h1>
               <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                A collection of my work in web development, mobile applications,
-                and design. Each project represents a unique challenge and
-                solution.
+                {skill
+                  ? `Showcasing projects that utilize ${skill} technology.`
+                  : "A collection of my work in web development, mobile applications, and design. Each project represents a unique challenge and solution."}
               </p>
+              {skill && (
+                <Link
+                  href="/projects"
+                  className="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  View all projects
+                </Link>
+              )}
             </div>
           </AnimatedElement>
 

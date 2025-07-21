@@ -13,146 +13,6 @@ export const personalInfo = {
     },
 }
 
-export const projects = {
-    // 'project-1': {
-    //     id: 'project-1',
-    //     title: 'Smart Budgeter: An Artificial Intelligence Android Application Budgeting Assistant for Proactive Financial Management',
-    //     description: 'An Artificial Intelligence (AI) Android application that helps users manage their finances by providing a budget planner and expense tracker.',
-    //     fullDescription: `
-    //  The study developed SMART BUDGETER, an artificial intelligence (AI) Android application that helps users manage their personal finances more effectively. The application solves common problems such as manual expense tracking and lack of financial knowledge. Key features include automatic transaction categorization, budget planning, analysis of spending patterns, and access to financial learning materials. The development followed the Agile Scrum method, with user needs identified through research and observation. The application was created using Dart and Python with the Flutter framework and Supabase database, and was tested by IT professionals, financial experts, and general users using ISO 25010 standards.
-
-    //   Key Features:
-    //   - Budget Allocation
-    //   - Expense Tracking
-    //   - AI Budget Generator
-    //   - Automatic Category/Expense Categorization
-    //   - Price Monitoring
-    //   - Financial Learning Materials
-    // `,
-    //     imageUrl: '/smartbud-bg.png',
-    //     images: [
-    //         '/assets/smart budgeter/3b. Sign-Up and Sign-In-portrait.png',
-    //         '/assets/smart budgeter/3c. Sign-Up and Sign-In-portrait.png',
-    //         '/assets/smart budgeter/4a. Forgot Password-portrait.png',
-    //         '/assets/smart budgeter/4c. Forgot Password-portrait.png',
-    //         '/assets/smart budgeter/5a. Financial Assessment-portrait.png',
-    //         '/assets/smart budgeter/5c. Financial Assessment-portrait.png',
-    //         '/assets/smart budgeter/5d. Financial Assessment-portrait.png',
-    //         '/assets/smart budgeter/6a. Budget Input-portrait.png',
-    //         '/assets/smart budgeter/6b. Budget Input-portrait.png',
-    //         '/assets/smart budgeter/6c. Budget Input-portrait.png',
-    //         '/assets/smart budgeter/6d. Budget Input-portrait.png',
-    //         '/assets/smart budgeter/6e. Budget Input-portrait.png',
-    //         '/assets/smart budgeter/6f. Budget Input-portrait.png',
-    //         '/assets/smart budgeter/7a. Budget Allocation-portrait.png',
-    //         '/assets/smart budgeter/7b. Budget Allocation-portrait.png',
-    //         '/assets/smart budgeter/9a. Homepage Interface-portrait.png',
-    //         '/assets/smart budgeter/16c. Income and Expense Classification-portrait.png',
-    //         '/assets/smart budgeter/17a. Price Tracking-portrait.png',
-    //     ],
-    //     features: ["Budget Allocation",  "Expense Tracking",  "AI Budget Generator", "Spending Analysis",  "Automatic Category/Expense Categorization", "Price Monitoring", "Financial Learning Materials"],
-    //     tags: ['Dart', 'Flutter', 'Python', 'Supabase'],
-    //     technologies: ['Dart', 'Flutter', 'Python', 'Supabase'],
-    //     liveUrl: '#',
-    //     githubUrl: 'https://github.com/Cha17/baidyet',
-    // },
-    // 'project-2': {
-    //     id: 'project-2',
-    //     title: 'Smart Budgeter User Manual',
-    //     description: 'A user manual for the Smart Budgeter Android application.',
-    //     fullDescription: `
-    //   A user manual for the Smart Budgeter Android application. The user manual is a guide that helps users understand how to use the Smart Budgeter Android application. It is a comprehensive guide that covers all the features of the application and how to use them.
-
-    //   Contents:
-    //   [
-    //     "Features Overview",
-    //     "How to Use the App",
-    //     "Frequently Asked Questions",
-    //     "Troubleshooting",
-    //     "Contact Support"
-    //   ]
-    // `,
-    //     imageUrl: '/Smart Budgeter User Manual cover.png',
-    //     tags: ['Canva', 'User Manual'],
-    //     technologies: ['Canva'],
-    //     liveUrl: '#',
-    //     githubUrl: '#',
-    // },
-    'project-3': {
-        id: 'project-3',
-        title: 'Project Three',
-        description: 'UI/UX design project for a modern dashboard interface.',
-        fullDescription: `
-      A comprehensive dashboard design project that focuses on user experience and interface design.
-      Created with modern design principles and attention to detail.
-
-      Key Features:
-      - Intuitive navigation
-      - Data visualization
-      - Customizable widgets
-      - Accessibility focused
-    `,
-        imageUrl: '/project3.jpg',
-        tags: ['UI/UX', 'Figma', 'Design'],
-        technologies: ['Figma', 'Adobe XD', 'Photoshop'],
-        liveUrl: 'https://project-three.com',
-        githubUrl: 'https://github.com/yourusername/project-three',
-    },
-    'project-4': {
-        id: 'project-4',
-        title: 'Project Four',
-        description: 'UI/UX design project for a modern dashboard interface.',
-        fullDescription: `
-      A comprehensive dashboard design project that focuses on user experience and interface design.
-      Created with modern design principles and attention to detail.
-
-      Key Features:
-      - Intuitive navigation
-      - Data visualization
-      - Customizable widgets
-      - Accessibility focused
-    `,
-        imageUrl: '/project3.jpg',
-        tags: ['UI/UX', 'Figma', 'Design'],
-        technologies: ['Figma', 'Adobe XD', 'Photoshop'],
-        liveUrl: 'https://project-three.com',
-        githubUrl: 'https://github.com/yourusername/project-three',
-    },
-
-    'project-5': {
-        id: 'project-5',
-        title: 'Pathway to Academic Progress and Success (PAPS): University Admission Management for Optimization',
-        description: 'A web-based system for managing university admission processes.',
-        fullDescription: `
-      A web-based system for managing university admission processes, including application tracking, document management, and communication tools.
-      Created with modern design principles and attention to detail. 
-    `,
-    features: [
-        'Application Tracking',
-        'Document Management',
-        'Communication Tools',
-    ],
-    tags: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
-    technologies: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "PHP", "MySQL"],
-    liveUrl: 'https://github.com/Cha17/paps',
-    githubUrl: 'https://github.com/Cha17/paps',
-    },
-
-    'project-6': {
-        id: 'project-6',
-        title: 'G! Arat Na: Enhancing Efficiency and Accessibility Through a Web-Based Event Registration System for Cavite State University - Bacoor Campus',
-        cdescription: 'A comprehensive web-based event registration system designed for Cavite State University - Bacoor Campus to optimize and automate event management processes.',
-        fullDescription: `
-      A modern web-based event registration system that revolutionizes how CvSU Bacoor manages and conducts event registrations. The system offers a comprehensive solution for both event organizers and participants, featuring automated workflows and real-time processing capabilities. Developed as a project for the Programming Languages course, this system showcases the practical implementation of various programming languages and web technologies to address the university's event management needs.
-    `,
-        features: ["Online Registration Forms", "QR Code Generation after Registration", "QR Code Scanning for Event Attendance and Payment", "Administrative Dashboard", "Event Management"],
-        tags: ['Web Development', 'Event Management', 'University System'],
-        technologies: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "PHP", "MySQL"],
-        
-        liveUrl: '#',
-        githubUrl: 'https://github.com/Cha17/g-arat-na',
-    },
-}
 
 export const experiences = [
     {
@@ -197,36 +57,36 @@ export const achievements = [
 
 ]
 
-export const presentations = [
-    {
-        period: 'Fourth Year (A.Y. 2024 - 2025)',
-        title: 'Smart Budgeter: An Artificial Intelligence Android Application Budgeting Assistant for Proactive Financial Management',
-        school: 'Cavite State University - Bacoor City Campus',
-        description: 'Undergraduate Thesis',
-        development: 'Developed using Dart, Flutter, and Python'
-    },
-    {
-        period: 'Third Year, Second Semester (A.Y. 2023 - 2024)',
-        title: 'G! Arat Na: Enhancing Efficiency and Accessibility through a Web-based Event Registration System for Cavite State University - Bacoor Campus',
-        school: 'Cavite State University - Bacoor City Campus',
-        description: 'A Project for Programming Languages course',
-        development: 'Developed using HTML, CSS, Tailwind CSS, JavaScript, PHP, and MySQL'
-    },
-    {
-        period: 'Third Year, First Semester (A.Y. 2023 - 2024)',
-        title: 'Pathway to Academic Progress and Success (PAPS): University Admission Management for Optimization',
-        school: 'Cavite State University - Bacoor City Campus',
-        description: 'A Project for Software Engineering II course',
-        development: 'Developed using HTML, CSS, Tailwind CSS, JavaScript, PHP, and MySQL'
-    },
-    {
-        period: 'Second Year, Second Semester (A.Y. 2022 - 2023)',
-        title: 'Student’s Attendance and Identification Monitoring System (S-AIMS)',
-        school: 'Cavite State University - Bacoor City Campus',
-        description: 'A Project for Software Engineering I course',
-        development: 'Developed using HTML, CSS, Bootstrap, JavaScript, PHP, and MySQL'
-    },
-]
+// export const presentations = [
+//     {
+//         period: 'Fourth Year (A.Y. 2024 - 2025)',
+//         title: 'Smart Budgeter: An Artificial Intelligence Android Application Budgeting Assistant for Proactive Financial Management',
+//         school: 'Cavite State University - Bacoor City Campus',
+//         description: 'Undergraduate Thesis',
+//         development: 'Developed using Dart, Flutter, and Python'
+//     },
+//     {
+//         period: 'Third Year, Second Semester (A.Y. 2023 - 2024)',
+//         title: 'G! Arat Na: Enhancing Efficiency and Accessibility through a Web-based Event Registration System for Cavite State University - Bacoor Campus',
+//         school: 'Cavite State University - Bacoor City Campus',
+//         description: 'A Project for Programming Languages course',
+//         development: 'Developed using HTML, CSS, Tailwind CSS, JavaScript, PHP, and MySQL'
+//     },
+//     {
+//         period: 'Third Year, First Semester (A.Y. 2023 - 2024)',
+//         title: 'Pathway to Academic Progress and Success (PAPS): University Admission Management for Optimization',
+//         school: 'Cavite State University - Bacoor City Campus',
+//         description: 'A Project for Software Engineering II course',
+//         development: 'Developed using HTML, CSS, Tailwind CSS, JavaScript, PHP, and MySQL'
+//     },
+//     {
+//         period: 'Second Year, Second Semester (A.Y. 2022 - 2023)',
+//         title: 'Student’s Attendance and Identification Monitoring System (S-AIMS)',
+//         school: 'Cavite State University - Bacoor City Campus',
+//         description: 'A Project for Software Engineering I course',
+//         development: 'Developed using HTML, CSS, Bootstrap, JavaScript, PHP, and MySQL'
+//     },
+// ]
 
 export const scholarship = [
     {

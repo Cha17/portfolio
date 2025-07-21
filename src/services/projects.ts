@@ -1,30 +1,38 @@
 import { db } from "@/db/kysely";
+import { sql } from "kysely";
 import { Projects, ProjectImages, ProjectFiles } from "@/db/types.generated";
 
-export async function getAllProjects() {
+export async function getAllProjects(skillFilter?: string) {
   const projects = await db
     .selectFrom("projects")
     .selectAll()
     .execute();
 
-  // Get images for each project
+  // Get images for each project and filter by skill if needed
   const projectsWithImages = await Promise.all(
-    projects.map(async (project) => {
-      const images = await db
-        .selectFrom("project_images")
-        .selectAll()
-        .where("project_id", "=", project.id)
-        .orderBy("id", "asc")
-        .execute();
+    projects
+      .filter(project => {
+        if (!skillFilter) return true;
+        return project.technologies?.some(tech => 
+          tech.toLowerCase() === skillFilter.toLowerCase()
+        ) ?? false;
+      })
+      .map(async (project) => {
+        const images = await db
+          .selectFrom("project_images")
+          .selectAll()
+          .where("project_id", "=", project.id)
+          .orderBy("id", "asc")
+          .execute();
 
-      return {
-        ...project,
-        images: images.map((img) => ({
-          url: img.image_url,
-          name: img.image_name,
-        })),
-      };
-    })
+        return {
+          ...project,
+          images: images.map((img) => ({
+            url: img.image_url,
+            name: img.image_name,
+          })),
+        };
+      })
   );
 
   return projectsWithImages;

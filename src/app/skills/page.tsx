@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import AnimatedElement from "../../components/AnimatedElement";
@@ -126,9 +127,12 @@ function SkillCard({
           <div className="w-8 h-8 flex items-center justify-center">
             <Icon icon={iconName} className="w-8 h-8" />
           </div>
-          <h3 className="font-semibold text-xl text-gray-900 dark:text-white">
+          <Link
+            href={`/projects?skill=${encodeURIComponent(name)}`}
+            className="font-semibold text-xl text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+          >
             {name}
-          </h3>
+          </Link>
         </div>
         <span
           className={`px-3 py-1 rounded-full text-sm font-medium ${statusColors[status]}`}
