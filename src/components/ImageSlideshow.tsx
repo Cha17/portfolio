@@ -4,14 +4,14 @@ import { useState } from "react";
 import Image from "next/image";
 
 interface ImageSlideshowProps {
-  images: {
-    url: string;
-    name: string;
-  }[];
-  title: string;
+  images: string[];
+  interval?: number;
 }
 
-export default function ImageSlideshow({ images, title }: ImageSlideshowProps) {
+export default function ImageSlideshow({
+  images,
+  interval = 3000,
+}: ImageSlideshowProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
@@ -64,8 +64,8 @@ export default function ImageSlideshow({ images, title }: ImageSlideshowProps) {
         {/* Main Image */}
         <div className="relative w-full flex justify-center">
           <Image
-            src={images[currentIndex].url}
-            alt={images[currentIndex].name}
+            src={images[currentIndex]}
+            alt={`Image ${currentIndex + 1}`}
             width={450}
             height={900}
             className="max-h-[80vh] w-auto object-contain"
@@ -117,7 +117,7 @@ export default function ImageSlideshow({ images, title }: ImageSlideshowProps) {
 
         {/* Image Caption */}
         <div className="absolute bottom-4 left-4 bg-black/10 px-3 py-1 rounded-lg text-gray-400 text-sm max-w-[80%] truncate">
-          {images[currentIndex].name}
+          {`Image ${currentIndex + 1}`}
         </div>
 
         {/* Dots Indicator */}
@@ -131,7 +131,7 @@ export default function ImageSlideshow({ images, title }: ImageSlideshowProps) {
                   ? "bg-white"
                   : "bg-white/50 hover:bg-white/75"
               }`}
-              aria-label={`Go to image ${index + 1} - ${images[index].name}`}
+              aria-label={`Go to image ${index + 1} - ${images[index]}`}
             />
           ))}
         </div>

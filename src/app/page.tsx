@@ -1,36 +1,37 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import ProjectCard from '../components/ProjectCard'
-import AnimatedElement from '../components/AnimatedElement'
+import Link from "next/link";
+import Image from "next/image";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import ProjectCard from "../components/ProjectCard";
+import AnimatedElement from "../components/AnimatedElement";
 
 const projects = [
   {
-    id: 'project-1',
-    title: 'Project One',
-    description: 'A beautiful web application built with Next.js and TailwindCSS.',
-    imageUrl: '/project1.jpg',
-    tags: ['Next.js', 'React', 'TailwindCSS'],
-    projectUrl: '/projects/project-1',
+    id: "project-1",
+    title: "Project One",
+    description:
+      "A beautiful web application built with Next.js and TailwindCSS.",
+    imageUrl: "/project1.jpg",
+    technologies: ["Next.js", "React", "TailwindCSS"],
+    projectUrl: "/projects/project-1",
   },
   {
-    id: 'project-2',
-    title: 'Project Two',
-    description: 'Mobile app developed with React Native and Firebase.',
-    imageUrl: '/project2.jpg',
-    tags: ['React Native', 'Firebase', 'Mobile'],
-    projectUrl: '/projects/project-2',
+    id: "project-2",
+    title: "Project Two",
+    description: "Mobile app developed with React Native and Firebase.",
+    imageUrl: "/project2.jpg",
+    technologies: ["React Native", "Firebase", "Mobile"],
+    projectUrl: "/projects/project-2",
   },
   {
-    id: 'project-3',
-    title: 'Project Three',
-    description: 'UI/UX design project for a modern dashboard interface.',
-    imageUrl: '/project3.jpg',
-    tags: ['UI/UX', 'Figma', 'Design'],
-    projectUrl: '/projects/project-3',
+    id: "project-3",
+    title: "Project Three",
+    description: "UI/UX design project for a modern dashboard interface.",
+    imageUrl: "/project3.jpg",
+    technologies: ["UI/UX", "Figma", "Design"],
+    projectUrl: "/projects/project-3",
   },
-]
+];
 
 export default function HomePage() {
   return (
@@ -43,19 +44,24 @@ export default function HomePage() {
             <AnimatedElement>
               <div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-                  Hi, I'm <span className="text-[#457B9D] dark:text-[#457EAF]">Charl</span>
+                  Hi, I&apos;m{" "}
+                  <span className="text-[#457B9D] dark:text-[#457EAF]">
+                    Charl
+                  </span>
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-                  A student with a passion for technology, aspiring to be a software engineer to create innovative solutions for the people.
+                  A student with a passion for technology, aspiring to be a
+                  software engineer to create innovative solutions for the
+                  people.
                 </p>
                 <div className="flex gap-4">
-                  <Link 
+                  <Link
                     href="/projects"
                     className="px-6 py-3 bg-[#1D3557] hover:bg-[#457B9D] dark:bg-[#1D3557] dark:hover:bg-[#457EAF] text-white rounded-lg transition-colors"
                   >
                     My Projects
                   </Link>
-                  <Link 
+                  <Link
                     href="/about"
                     className="px-6 py-3 border border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 rounded-lg transition-colors"
                   >
@@ -122,5 +128,5 @@ export default function HomePage() {
       </div>
       <Footer />
     </>
-  )
+  );
 }

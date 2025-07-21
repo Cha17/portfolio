@@ -1,52 +1,57 @@
 // Import necessary types from Drizzle ORM for PostgreSQL
-import { pgTable, serial, text, integer, timestamp, varchar, boolean } from "drizzle-orm/pg-core";
+import { pgTable, text, boolean, timestamp, uuid } from "drizzle-orm/pg-core";
 
 // Define the skills table
 export const skills = pgTable("skills", {
   // Primary key: Automatically increments for each new skill
-  id: serial("id").primaryKey(),
+  id: uuid("id").primaryKey(),
   // Name of the skill (e.g., "React & Next.js")
-  name: varchar("name", { length: 100 }).notNull(),
+  name: text("name").notNull(),
   // Category of the skill (e.g., "Frontend Development", "Backend Development")
-  category: varchar("category", { length: 100 }).notNull(),
+  category: text("category").notNull(),
   // Skill proficiency level from 0-100
   status: text("status").notNull(),
-  // Detailed description of the skill
+  // Description of the skill and experience
   description: text("description").notNull(),
-  // Automatically set to current timestamp when record is created
-  created_at: timestamp("created_at").defaultNow().notNull(),
-  // Automatically set to current timestamp when record is updated
-  updated_at: timestamp("updated_at").defaultNow().notNull(),
+  // Timestamps for record keeping
+  created_at: timestamp("created_at").defaultNow(),
+  updated_at: timestamp("updated_at").defaultNow(),
 });
 
-
+// Define the projects table
 export const projects = pgTable("projects", {
-	id: text("id").primaryKey().notNull(), // e.g., 'prj-1'
-	title: text("title").notNull(),
-	description: text("description").notNull(),
-	fullDescription: text("full_description"),
-	features: text("features").array(),
-	imageUrl: text("image_url"), // main project image from Google Drive
-	liveUrl: text("live_url"),
-	githubUrl: text("github_url"),
-	technologies: text("technologies").array(),
-	displayPdf: boolean("display_pdf").notNull().default(false),
-	createdAt: timestamp("created_at", { mode: 'string' }).defaultNow().notNull(),
-	updatedAt: timestamp("updated_at", { mode: 'string' }).defaultNow().notNull(),
+  id: uuid("id").primaryKey(),
+  title: text("title").notNull(),
+  description: text("description").notNull(),
+  full_description: text("full_description"),
+  image_url: text("image_url"),
+  technologies: text("technologies").array(),
+  features: text("features").array(),
+  github_url: text("github_url"),
+  live_url: text("live_url"),
+  display_pdf: boolean("display_pdf").default(false),
+  created_at: timestamp("created_at").defaultNow(),
+  updated_at: timestamp("updated_at").defaultNow(),
 });
 
-export const projectImages = pgTable("project_images", {
-	id: text("id").primaryKey().notNull(), // e.g., 'img-1'
-	projectId: text("project_id").references(() => projects.id).notNull(),
-	imageUrl: text("image_url").notNull(), // Google Drive link
-	imageName: text("image_name").notNull(),
+// Define the project images table
+export const project_images = pgTable("project_images", {
+  id: uuid("id").primaryKey(),
+  project_id: uuid("project_id")
+    .notNull()
+    .references(() => projects.id),
+  image_url: text("image_url").notNull(),
+  image_name: text("image_name").notNull(),
 });
 
-export const projectFiles = pgTable("project_files", {
-	id: text("id").primaryKey().notNull(), // e.g., 'file-1'
-	projectId: text("project_id").references(() => projects.id).notNull(),
-	fileUrl: text("file_url").notNull(), // Google Drive link
-	fileName: text("file_name").notNull(),
+// Define the project files table
+export const project_files = pgTable("project_files", {
+  id: uuid("id").primaryKey(),
+  project_id: uuid("project_id")
+    .notNull()
+    .references(() => projects.id),
+  file_url: text("file_url").notNull(),
+  file_name: text("file_name").notNull(),
 });
 
 
