@@ -1,5 +1,5 @@
 // Import necessary types from Drizzle ORM for PostgreSQL
-import { pgTable, serial, text, integer, timestamp, varchar, boolean } from "drizzle-orm/pg-core";
+import { pgTable, serial, text, timestamp, varchar, boolean } from "drizzle-orm/pg-core";
 
 // Define the skills table
 export const skills = pgTable("skills", {

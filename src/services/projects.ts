@@ -1,6 +1,6 @@
 import { db } from "@/db/kysely";
-import { sql } from "kysely";
-import { Projects, ProjectImages, ProjectFiles } from "@/db/types.generated";
+// import { sql } from "kysely";
+// import { Projects, ProjectImages, ProjectFiles } from "@/db/types.generated";
 
 export async function getAllProjects(skillFilter?: string) {
   const projects = await db

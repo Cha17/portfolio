@@ -11,7 +11,7 @@ interface ImageSlideshowProps {
   title: string;
 }
 
-export default function ImageSlideshow({ images, title }: ImageSlideshowProps) {
+export default function ImageSlideshow({ images }: ImageSlideshowProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
