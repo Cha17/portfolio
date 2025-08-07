@@ -88,14 +88,16 @@ export default function ContactPage() {
       ),
       icon: (
         <svg
+          className="w-8 h-8"
+          fill="currentColor"
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
           y="0px"
           width="100"
           height="100"
-          viewBox="0 0 30 30"
+          viewBox="0 0 50 50"
         >
-          <path d="M15,3C8.373,3,3,8.373,3,15c0,6.016,4.432,10.984,10.206,11.852V18.18h-2.969v-3.154h2.969v-2.099c0-3.475,1.693-5,4.581-5 c1.383,0,2.115,0.103,2.461,0.149v2.753h-1.97c-1.226,0-1.654,1.163-1.654,2.473v1.724h3.593L19.73,18.18h-3.106v8.697 C22.481,26.083,27,21.075,27,15C27,8.373,21.627,3,15,3z"></path>
+          <path d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z"></path>
         </svg>
       ),
     },
@@ -111,15 +113,12 @@ export default function ContactPage() {
         </a>
       ),
       icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          x="0px"
-          y="0px"
-          width="100"
-          height="100"
-          viewBox="0 0 30 30"
-        >
-          <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z"></path>
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            fillRule="evenodd"
+            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+            clipRule="evenodd"
+          />
         </svg>
       ),
     },
@@ -141,7 +140,7 @@ export default function ContactPage() {
             </div>
           </AnimatedElement>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 justify-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* <AnimatedElement delay={100}>
               <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm">
                 <h2 className="text-2xl font-bold mb-6">Send a Message</h2>
@@ -225,7 +224,7 @@ export default function ContactPage() {
             </AnimatedElement> */}
 
             <AnimatedElement delay={200}>
-              <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm max-w-md mx-auto justify-center">
                 <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
                 <div className="space-y-6">
                   {contactInfo.map((info) => (
@@ -284,14 +283,16 @@ export default function ContactPage() {
                     >
                       <span className="sr-only">Facebook</span>
                       <svg
+                        className="w-6 h-6"
+                        fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg"
                         x="0px"
                         y="0px"
                         width="100"
                         height="100"
-                        viewBox="0 0 30 30"
+                        viewBox="0 0 50 50"
                       >
-                        <path d="M15,3C8.373,3,3,8.373,3,15c0,6.016,4.432,10.984,10.206,11.852V18.18h-2.969v-3.154h2.969v-2.099c0-3.475,1.693-5,4.581-5 c1.383,0,2.115,0.103,2.461,0.149v2.753h-1.97c-1.226,0-1.654,1.163-1.654,2.473v1.724h3.593L19.73,18.18h-3.106v8.697 C22.481,26.083,27,21.075,27,15C27,8.373,21.627,3,15,3z"></path>
+                        <path d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z"></path>
                       </svg>
                     </a>
                     <a
@@ -317,14 +318,15 @@ export default function ContactPage() {
                     >
                       <span className="sr-only">LinkedIn</span>
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        x="0px"
-                        y="0px"
-                        width="100"
-                        height="100"
-                        viewBox="0 0 30 30"
+                        className="w-6 h-6"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
                       >
-                        <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z"></path>
+                        <path
+                          fillRule="evenodd"
+                          d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                          clipRule="evenodd"
+                        />
                       </svg>
                     </a>
                   </div>
