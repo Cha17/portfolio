@@ -27,6 +27,9 @@ export const skillIconMap: Record<string, string> = {
   "REST API": "vscode-icons:file-type-rest",
   "Drizzle": "logos:drizzle",
   "Kysely": "logos:kysely",
+  "Bun": "logos:bun",
+  "Hono": "logos:hono",
+  "Cloudflare": "logos:cloudflare",
 
   // Mobile Development
   "Flutter": "logos:flutter",
