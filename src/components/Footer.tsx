@@ -52,7 +52,7 @@ export default function Footer() {
                   LinkedIn
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href={personalInfo.socialLinks.facebook}
                   target="_blank"
@@ -61,14 +61,24 @@ export default function Footer() {
                 >
                   Facebook
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800">
-          <p className="text-center text-gray-600 dark:text-gray-400">
-            © {currentYear} {personalInfo.name}. All rights reserved.
-          </p>
+          <div className="flex flex-col items-center space-y-2 text-center text-gray-600 dark:text-gray-400 text-sm">
+            <p>
+              © {currentYear} {personalInfo.name}. All rights reserved.
+            </p>
+            <p>
+              Built with <span className="font-semibold">Next.js</span>,{" "}
+              <span className="font-semibold">React</span>,{" "}
+              <span className="font-semibold">TypeScript</span>,{" "}
+              <span className="font-semibold">Tailwind CSS</span>,{" "}
+              <span className="font-semibold">Drizzle ORM</span>, and{" "}
+              <span className="font-semibold">Neon DB</span>.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

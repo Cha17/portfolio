@@ -6,6 +6,7 @@ export async function getAllProjects(skillFilter?: string) {
   const projects = await db
     .selectFrom("projects")
     .selectAll()
+    .orderBy("created_at", "desc")
     .execute();
 
   // Get images for each project and filter by skill if needed

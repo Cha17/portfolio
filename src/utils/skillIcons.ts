@@ -30,6 +30,8 @@ export const skillIconMap: Record<string, string> = {
   "Bun": "logos:bun",
   "Hono": "logos:hono",
   "Cloudflare": "logos:cloudflare",
+  "Neon DB": "logos:neon-db",
+  "Neon": "logos:neon",
 
   // Mobile Development
   "Flutter": "logos:flutter",

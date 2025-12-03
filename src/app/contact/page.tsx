@@ -32,7 +32,7 @@ export default function ContactPage() {
   const contactInfo = [
     {
       title: "Email",
-      value: "cha258930@gmail.com",
+      value: "charlcrtz17@gmail.com",
       icon: (
         <svg
           className="w-6 h-6"
@@ -49,10 +49,29 @@ export default function ContactPage() {
         </svg>
       ),
     },
+    {
+      title: "Phone",
+      value: "0976 001 3331",
+      icon: (
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M3 5a2 2 0 012-2h3.6a1 1 0 01.95.684l1.1 3.293a1 1 0 01-.217.987l-2.12 2.12a16.001 16.001 0 006.586 6.586l2.12-2.12a1 1 0 01.987-.217l3.293 1.1A1 1 0 0121 17.4V21a2 2 0 01-2 2h-.013C7.832 22.987 1.013 16.168 1 6.013A2 2 0 013 5z"
+          />
+        </svg>
+      ),
+    },
 
     {
       title: "Location",
-      value: "Bacoor City, Cavite",
+      value: "Imus City, Cavite",
       icon: (
         <svg
           className="w-6 h-6"
@@ -75,32 +94,32 @@ export default function ContactPage() {
         </svg>
       ),
     },
-    {
-      title: "Facebook",
-      value: (
-        <a
-          href="https://www.facebook.com/charl.cortez/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Charl Cortez
-        </a>
-      ),
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="currentColor"
-          xmlns="http://www.w3.org/2000/svg"
-          x="0px"
-          y="0px"
-          width="100"
-          height="100"
-          viewBox="0 0 50 50"
-        >
-          <path d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z"></path>
-        </svg>
-      ),
-    },
+    // {
+    //   title: "Facebook",
+    //   value: (
+    //     <a
+    //       href="https://www.facebook.com/charl.cortez/"
+    //       target="_blank"
+    //       rel="noopener noreferrer"
+    //     >
+    //       Charl Cortez
+    //     </a>
+    //   ),
+    //   icon: (
+    //     <svg
+    //       className="w-8 h-8"
+    //       fill="currentColor"
+    //       xmlns="http://www.w3.org/2000/svg"
+    //       x="0px"
+    //       y="0px"
+    //       width="100"
+    //       height="100"
+    //       viewBox="0 0 50 50"
+    //     >
+    //       <path d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z"></path>
+    //     </svg>
+    //   ),
+    // },
     {
       title: "LinkedIn",
       value: (
@@ -277,7 +296,7 @@ export default function ContactPage() {
                 <div className="mt-12">
                   <h3 className="text-lg font-semibold mb-4">Follow Me</h3>
                   <div className="flex space-x-4">
-                    <a
+                    {/* <a
                       href="https://www.facebook.com/charl.cortez/"
                       className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
                     >
@@ -294,7 +313,7 @@ export default function ContactPage() {
                       >
                         <path d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z"></path>
                       </svg>
-                    </a>
+                    </a> */}
                     <a
                       href="https://github.com/Cha17"
                       className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"

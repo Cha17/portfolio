@@ -8,8 +8,8 @@ export const personalInfo = {
     location: 'Bacoor City, Cavite, Philippines',
     socialLinks: {
         github: 'https://github.com/Cha17',
-        linkedin: 'https://linkedin.com/in/yourusername',
-        facebook: 'https://www.facebook.com/charl.cortez/',
+        linkedin: 'https://www.linkedin.com/in/charl-cortez-814232264',
+        // facebook: 'https://www.facebook.com/charl.cortez/',
     },
 }
 
@@ -28,10 +28,10 @@ export const experiences = [
 
 export const education = [
     {
-        period: 'September 2022 - Present',
+        period: 'September 2021 - Septembr 2024',
         degree: 'Bachelor of Science in Computer Science',
         school: 'Cavite State University - Bacoor City Campus',
-        description: 'Expected to graduate soon with a Bachelor of Science in Computer Science, specializing in software engineering, web development, and computer networks.',
+        description: 'I graduated Magna Cum Laude with a Bachelor of Science in Computer Science from Cavite State University - Bacoor City Campus.',
     },
     {
         period: 'June 2015 - March 2021',
