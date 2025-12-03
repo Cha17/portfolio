@@ -49,7 +49,7 @@ export default async function HomePage() {
               <div className="relative h-[400px] w-full flex justify-center items-center">
                 <div className="relative w-[350px] h-[350px] rounded-full overflow-hidden border-4 border-[#457B9D] dark:border-[#457EAF] shadow-lg">
                   <Image
-                    src="/sample.webp"
+                    src="/pajah-grad-pic-sq.JPG"
                     alt="Charl Cortez"
                     fill
                     className="object-cover"

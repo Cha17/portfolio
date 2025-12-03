@@ -252,7 +252,7 @@ export default function ContactPage() {
                     background.
                   </p>
                   <a
-                    href="/Cortez_Charl_CV.pdf"
+                    href="/Cortez, Charl - Resume.pdf"
                     download
                     className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg transition-colors"
                   >
